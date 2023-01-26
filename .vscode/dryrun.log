@@ -1,0 +1,16 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'c:/Users/Tolek/Documents/Projects/os'
+ 
+File not found - *.c
+
+File not found - *.c
+
+File not found - *.asm
+
+rm -Rf dist/ && \
+mkdir -p dist/x86_64 && \
+x86_64-elf-ld -n -o dist/x86_64/kernel.bin -T targets/x86_64/linker.ld    && \
+cp dist/x86_64/kernel.bin targets/x86_64/iso/boot/kernel.bin && \
+grub-mkrescue /usr/lib/grub/i386-pc -o dist/x86_64/kernel.iso targets/x86_64/iso
+make: Leaving directory 'c:/Users/Tolek/Documents/Projects/os'
+ 
